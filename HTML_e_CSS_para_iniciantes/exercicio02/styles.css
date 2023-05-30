@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  /* width: 300px;
+  margin: 0 auto 0 auto; */
+}
+
+.card {
+  background: #111;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 50px;
+}
+
+.card h2 {
+  color: white;
+  margin: 0px;
+}
+
+.card h2 span {
+  color: #febe01;
+}
+
+.card p {
+  color: #b2b2b2;
+}
+
+.card p span {
+  color: #febe01;
+}
+
+.buy {
+  display: inline-block;
+  text-decoration: none;
+  background: #febe01;
+  color: #332200;
+  border-radius: 4px;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}

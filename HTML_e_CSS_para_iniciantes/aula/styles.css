@@ -1,7 +1,24 @@
-img {
-  width: 600px;
+h1 {
+  margin: 0px;
+  padding: 10px;
+  background-color: lightblue;
 }
 
-body {
-  background: burlywood;
+.index1 {
+  position: relative;
+  background-color: greenyellow;
+  top: 20px;
+  z-index: 1;
+}
+
+.index2 {
+  position: absolute;
+  background-color: lightcoral;
+  top: 60px;
+  z-index: 3;
+}
+
+.index3 {
+  position: relative;
+  z-index: 9;
 }

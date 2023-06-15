@@ -1,24 +1,49 @@
-h1 {
-  margin: 0px;
-  padding: 10px;
-  background-color: lightblue;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.index1 {
-  position: relative;
-  background-color: greenyellow;
-  top: 20px;
-  z-index: 1;
+h1::before {
+  content: "";
+  display: inline-block;
+  width: 60px;
+  height: 4px;
+  background: red;
+  margin-right: 1.2rem;
 }
 
-.index2 {
-  position: absolute;
-  background-color: lightcoral;
-  top: 60px;
-  z-index: 3;
+h1::after {
+  content: "";
+  display: inline-block;
+  width: 60px;
+  height: 4px;
+  background: red;
+  margin-left: 1.2rem;
 }
 
-.index3 {
-  position: relative;
-  z-index: 9;
+li {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(#caf, #6a049a);
+  border: 2px solid rgb(158, 11, 158);
+  border-radius: 50%;
+}
+
+p {
+  font-size: 1rem;
+}
+
+p::first-letter {
+  font-size: 1.5rem;
 }

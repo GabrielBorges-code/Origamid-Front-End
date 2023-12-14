@@ -1,3 +1,5 @@
+import React from 'react'
+
 const App = () => {
   const luana = {
     cliente: "Luana",

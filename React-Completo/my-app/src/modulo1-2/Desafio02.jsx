@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Desafio02 = () => {
   const produtos = [
     {

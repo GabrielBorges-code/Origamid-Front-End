@@ -1,8 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Exemplos from "./Exemplos.jsx";
-
-import Main from "./desafio03/Main.jsx";
+import Exemplos from "./modulo1-2/Exemplos.jsx";
+import Main from "./modulo1-2/desafio03/Main.jsx";
 
 const router = createBrowserRouter([
   {

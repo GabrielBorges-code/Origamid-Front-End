@@ -7,7 +7,6 @@ import { useLocation } from "react-router-dom";
 
 const Produtos = () => {
   const { pathname } = useLocation();
-  console.log(location);
 
   return (
     <React.Fragment>

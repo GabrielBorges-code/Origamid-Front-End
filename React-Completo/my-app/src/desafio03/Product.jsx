@@ -1,4 +1,3 @@
-import Header from "./Header";
 import Titulo from "./Title";
 
 const Product = () => {
@@ -9,8 +8,6 @@ const Product = () => {
 
   return (
     <>
-      <Header />
-
       <Titulo title="Produtos" />
 
       {produtos.map((produto, i) => (

@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Exemplos from "./Exemplos.jsx";
-import Product from "./desafio03/Product.jsx";
-import Home from "./desafio03/Home.jsx";
+
+import Main from "./desafio03/Main.jsx";
 
 const router = createBrowserRouter([
   {
@@ -11,11 +11,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/produtos",
-    element: <Product />,
+    element: <Main />,
   },
   {
     path: "/home",
-    element: <Home />,
+    element: <Main />,
   },
 ]);
 

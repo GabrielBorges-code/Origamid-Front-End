@@ -1,12 +1,10 @@
-/* eslint-disable react/prop-types */
 import React from "react";
-import Form from "./form/Form.jsx";
+import Main from "./desafio03/Main";
 
 const Exemplos = () => {
-
   return (
     <React.Fragment>
-      <Form />
+      <Main />
     </React.Fragment>
   );
 };

@@ -6,13 +6,12 @@ const Desafio4 = () => {
   // const [response, setResponse] = useState([]);
 
   async function fetchApi(item) {
+    setProducts({ response: false, products: null });
     const response = await getProduct(item);
     const responseJSON = await response.json();
 
-    setProducts({ response, products: responseJSON });
+    setProducts({ response: true, products: responseJSON });
   }
-
-  console.log("response", products?.response);
 
   return (
     <>
@@ -21,8 +20,7 @@ const Desafio4 = () => {
         <button onClick={() => fetchApi("smarthphone")}>smarthphone</button>
         <button onClick={() => fetchApi("tablet")}>tablet</button>
       </div>
-
-      {products?.products && (
+      {products.response ? (
         <div>
           <h1>{products?.products.nome}</h1>
           <p>R$ {products?.products.preco}</p>
@@ -33,6 +31,8 @@ const Desafio4 = () => {
             </div>
           ))}
         </div>
+      ) : (
+        <p>carregando...</p>
       )}
     </>
   );

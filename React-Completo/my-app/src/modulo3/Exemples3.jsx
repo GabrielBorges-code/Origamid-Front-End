@@ -1,9 +1,9 @@
-import Desafio4 from "./Desafio4";
+import Desafio5 from "./desafio5/Desafio5";
 
 const Exemples3 = () => {
   return (
     <>
-      <Desafio4 />
+      <Desafio5 />
     </>
   );
 };

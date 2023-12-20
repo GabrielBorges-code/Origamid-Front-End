@@ -1,19 +1,5 @@
 export async function getProduct(itemApi) {
-  let url;
-
-  switch (itemApi) {
-    case "tablet":
-      url = "https://ranekapi.origamid.dev/json/api/produto/tablet";
-      break;
-    case "smarthphone":
-      url = "https://ranekapi.origamid.dev/json/api/produto/smartphone";
-      break;
-    case "notebook":
-      url = "https://ranekapi.origamid.dev/json/api/produto/notebook";
-      break;
-    default:
-      console.log("valor inválido");
-  }
+  let url = `https://ranekapi.origamid.dev/json/api/produto/${itemApi}`;
 
   try {
     const response = await fetch(url);

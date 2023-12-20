@@ -17,7 +17,7 @@ const Desafio4 = () => {
     <>
       <div style={{ display: "flex", gap: "20px" }}>
         <button onClick={() => fetchApi("notebook")}>notebook</button>
-        <button onClick={() => fetchApi("smarthphone")}>smarthphone</button>
+        <button onClick={() => fetchApi("smartphone")}>smartphone</button>
         <button onClick={() => fetchApi("tablet")}>tablet</button>
       </div>
       {products.response ? (

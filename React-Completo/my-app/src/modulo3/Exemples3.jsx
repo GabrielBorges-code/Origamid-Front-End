@@ -1,9 +1,9 @@
-import Desafio5 from "./desafio5/Desafio5";
+import CallbackAndMemo from "./CallbackAndMemo";
 
 const Exemples3 = () => {
   return (
     <>
-      <Desafio5 />
+      <CallbackAndMemo />
     </>
   );
 };

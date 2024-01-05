@@ -7,15 +7,15 @@ const Form = () => {
   const [message, setMessage] = useState("");
   const { data, error, loading, request } = useSaveDataUser();
   const [form, setForm] = useState({
-    name: "",
+    nome: "",
     email: "",
-    password: "",
+    senha: "",
     cep: "",
-    street: "",
-    number: "",
-    neighborhood: "",
-    city: "",
-    state: "",
+    rua: "",
+    numero: "",
+    bairro: "",
+    cidade: "",
+    estado: "",
   });
 
   function handleChange({ target }) {
@@ -39,13 +39,10 @@ const Form = () => {
     setMessage("Dados enviados com sucesso", data?.message);
   }
 
-  console.log("data", data);
-  console.log("error", error);
-
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Nome</label>
-      <input id="name" type="text" value={form.name} onChange={handleChange} />
+      <label htmlFor="nome">Nome</label>
+      <input id="nome" type="text" value={form.nome} onChange={handleChange} />
 
       <label htmlFor="email">E-mail</label>
       <input
@@ -55,49 +52,49 @@ const Form = () => {
         onChange={handleChange}
       />
 
-      <label htmlFor="pass">Senha</label>
+      <label htmlFor="senha">Senha</label>
       <input
-        id="password"
+        id="senha"
         type="password"
-        value={form.password}
+        value={form.senha}
         onChange={handleChange}
       />
 
       <label htmlFor="cep">CEP</label>
       <input id="cep" type="text" value={form.cep} onChange={handleChange} />
 
-      <label htmlFor="street">Rua</label>
+      <label htmlFor="rua">Rua</label>
       <input
-        id="street"
+        id="rua"
         type="text"
-        value={form.street}
+        value={form.rua}
         onChange={handleChange}
       />
 
-      <label htmlFor="number">Número</label>
+      <label htmlFor="numero">Número</label>
       <input
-        id="number"
+        id="numero"
         type="text"
-        value={form.number}
+        value={form.numero}
         onChange={handleChange}
       />
 
-      <label htmlFor="neighborhood">Bairro</label>
+      <label htmlFor="bairro">Bairro</label>
       <input
-        id="neighborhood"
+        id="bairro"
         type="text"
-        value={form.neighborhood}
+        value={form.bairro}
         onChange={handleChange}
       />
 
-      <label htmlFor="city">Cidade</label>
-      <input id="city" type="text" value={form.city} onChange={handleChange} />
+      <label htmlFor="cidade">Cidade</label>
+      <input id="cidade" type="text" value={form.cidade} onChange={handleChange} />
 
-      <label htmlFor="state">Estado</label>
+      <label htmlFor="estado">Estado</label>
       <input
-        id="state"
+        id="estado"
         type="text"
-        value={form.state}
+        value={form.estado}
         onChange={handleChange}
       />
       {loading && <p>Carregando...</p>}

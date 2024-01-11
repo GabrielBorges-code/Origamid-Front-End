@@ -1,45 +1,61 @@
 import { useState } from "react";
+import Input from "./form/Input";
+import Select from "./form/Select";
+import Radio from "./form/Radio";
+import Checkbox from "./form/Checkbox";
 
 const Main = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-  });
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [produto, setProduto] = useState("");
+  const [cores, setCores] = useState("");
+  const [linguagens, setLinguagens] = useState([]);
+  const [termos, setTermos] = useState([]);
 
-  function handleChange({ target }) {
-    const { id, value } = target;
-    setForm({
-      ...form,
-      [id]: value,
-    });
-    console.log(id, value);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+  console.log("nome: ", nome);
+  console.log("email: ", email);
+  console.log("produto: ", produto);
+  console.log("cores: ", cores);
+  console.log("linguagens: ", linguagens);
+  console.log("termos: ", termos, termos.length > 0);
 
   return (
-    <form onSubmit={handleSubmit}>
-      {form.name}
-      <label htmlFor="name">Nome</label>
-      <input
-        id="name"
-        name="name"
-        type="text"
-        value={form.name}
-        onChange={handleChange}
+    <form onSubmit={(event) => event.preventDefault()}>
+      <Checkbox
+        options={["Li e aceito os termos"]}
+        value={termos}
+        setValue={setTermos}
       />
 
-      {form.email}
-      <label htmlFor="email">E-mail</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        value={form.email}
-        onChange={handleChange}
+      <Checkbox
+        options={["JavaScript", "Java", "PHP"]}
+        value={linguagens}
+        setValue={setLinguagens}
       />
+
+      <Radio
+        options={["Azul", "Vermelho", "Verde"]}
+        value={cores}
+        setValue={setCores}
+      />
+
+      <Select
+        id="produto"
+        label="Produto"
+        value={produto}
+        setValue={setProduto}
+        options={["smarthphone", "notebook"]}
+      />
+
+      <Input value={nome} setValue={setNome} id="nome" label="Nome" required />
+      <Input
+        value={email}
+        setValue={setEmail}
+        id="email"
+        label="E-mail"
+        type="email"
+      />
+
       <button>Enviar</button>
     </form>
   );

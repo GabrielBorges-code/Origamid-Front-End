@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./modulo4/Main";
-import Desafio from "./modulo4/desafio8/Challenge";
+import Resolution from "./modulo4/desafio8/Resolution";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/desafio",
-    element: <Desafio />,
+    element: <Resolution />,
   },
 ]);
 

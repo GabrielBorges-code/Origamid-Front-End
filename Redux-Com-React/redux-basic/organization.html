@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./redux.min.js"></script>
+    <title>Organização dos arquivos do Redux</title>
+  </head>
+  <body>
+    <script type="module">
+      import store from "./store/configureStore.js";
+      import { increment } from "./store/count.js";
+
+      store.subscribe(() => {
+        console.log("funcionou");
+      });
+
+      store.dispatch(increment());
+    </script>
+  </body>
+</html>

@@ -1,26 +1,54 @@
 import { useDispatch, useSelector } from "react-redux";
-import { increment, reduce } from "./store/count";
-import { open, close } from "./store/modal";
+import { useEffect, useState } from "react";
+import { autoLogin, fetchLogin } from "./store/login";
+import { sum } from "./store/count";
 
 function App() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const state = useSelector((state) => state);
-  const { count, modal } = state;
+  const { login } = state;
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(autoLogin());
+  }, [dispatch]);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    dispatch(fetchLogin({ username, password }));
+  }
+
   return (
-    <div>
-      <p>Total: {count.total}</p>
-      <p>Modal: {modal ? "abriu" : "fechou"}</p>
+    <>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Usuário
+          <input
+            style={{ display: "block" }}
+            value={username}
+            onChange={({ target }) => setUsername(target.value)}
+            type="text"
+          />
+        </label>
 
-      <button onClick={() => dispatch(reduce())}>Reduzir</button>
+        <label>
+          Senha
+          <input
+            style={{ display: "block" }}
+            value={password}
+            onChange={({ target }) => setPassword(target.value)}
+            type="password"
+          />
+        </label>
 
-      <button onClick={() => dispatch(increment())}>Incrementar</button>
+        <button>Enviar</button>
+      </form>
 
-      <br />
+      <p>{login?.user?.data?.email}</p>
 
-      <button onClick={() => dispatch(open())}>open modal</button>
-      <button onClick={() => dispatch(close())}>close modal</button>
-    </div>
+      <button onClick={() => dispatch(sum(5))}>somar</button>
+    </>
   );
 }
 

@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import App from "./challengers01/App";
-import store from "./challengers01/store/configureStore";
+import App from "./moreRedux/App";
+import store from "./moreRedux/store/configureStore";
+// import App from "./challengers01/App";
+// import store from "./challengers01/store/configureStore";
 // import App from "./class/App.jsx";
 // import store from "./class/store/configureStore.js";
 

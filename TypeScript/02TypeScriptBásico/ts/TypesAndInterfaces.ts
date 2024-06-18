@@ -1,11 +1,17 @@
 type NumberOrString = string | number;
 
-let total: NumberOrString = 20;
-total = 30;
+let total1: NumberOrString = 20;
+total1 = 30;
 
-type Produto = { name: string; price: number; keyboard: boolean };
+interface IProduto {
+  name: string;
+  price: number;
+  keyboard: boolean;
+}
 
-function fillData(data: Produto) {
+type TProduto = { name: string; price: number; keyboard: boolean };
+
+function fillData(data: IProduto) {
   document.body.innerHTML += `
   <div>
     <h1>${data.name}</h1>
@@ -14,7 +20,7 @@ function fillData(data: Produto) {
   </div>`;
 }
 
-const computador: Produto = {
+const computador: IProduto = {
   keyboard: false,
   price: 500,
   name: "Computador 5",
